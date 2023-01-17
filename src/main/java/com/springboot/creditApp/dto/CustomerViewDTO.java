@@ -8,19 +8,20 @@ import java.io.Serializable;
 
 @Getter
 @NoArgsConstructor
-public class CustomerViewDTO implements Serializable {
+public final class CustomerViewDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String firstName;
     private String lastName;
     private String citizenNumber;
 
     public CustomerViewDTO(String firstName, String lastName, String citizenNumber) {
-        firstName = this.firstName;
-        lastName = this.lastName;
-        citizenNumber = this.citizenNumber;
+        this.firstName = firstName ;
+        this.lastName = lastName;
+        this.citizenNumber = citizenNumber;
     }
 
     public static CustomerViewDTO of(Customer customer){
-        return new CustomerViewDTO(customer.getFirstName(),customer.getLastName(),customer.getCitizenNumber());
-    }
+      return new CustomerViewDTO(customer.getFirstName(),customer.getLastName(),customer.getCitizenNumber());
+  }
 
 }

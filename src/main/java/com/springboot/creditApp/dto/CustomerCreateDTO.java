@@ -7,16 +7,16 @@ import lombok.Data;
 
 @Data
 public class CustomerCreateDTO {
-    @NotNull(message = "{backend.constraints.userName.NotNull.message}")
-    @Size(min = 5, max = 24,message = "{backend.constraints.userName.Size.message}")
+    @NotNull(message = "{creditApp.constraints.firstName.NotNull.message}")
+    @Size(min = 3, max = 24,message = "{creditApp.constraints.firstName.Size.message}")
     private String firstName;
 
-    @NotNull(message = "{backend.constraints.userName.NotNull.message}")
-    @Size(min = 5, max = 24,message = "{backend.constraints.userName.Size.message}")
+    @NotNull(message = "{creditApp.constraints.lastName.NotNull.message}")
+    @Size(min = 2, max = 24,message = "{creditApp.constraints.lastName.Size.message}")
     private String lastName;
 
-    @NotNull(message = "{backend.constraints.userName.NotNull.message}")
-    @Size(min = 5, max = 24,message = "{backend.constraints.userName.Size.message}")
+    @NotNull(message = "{creditApp.constraints.citizenNumber.NotNull.message}")
+    @Size(min = 1, max = 12,message = "{creditApp.constraints.citizenNumber.Size.message}")
     @UniqueCitizenNumber
     private String citizenNumber;
 }

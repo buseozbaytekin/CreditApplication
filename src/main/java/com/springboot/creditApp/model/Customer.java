@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "users")
+@Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,18 +20,18 @@ public class Customer {
     private String firstName;
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
-    @Column(name = "birth_date", nullable = false, length = 50)
+    @Column(name = "birth_date",  length = 50)
     private LocalDate birthDate;
-    @Column(name = "monthly_income", nullable = false, length = 50)
+    @Column(name = "monthly_income",  length = 50)
     private int monthlyIncome;
-    @Column(name = "phone_number", nullable = false, length = 50)
+    @Column(name = "phone_number",  length = 50)
     private String phoneNumber;
     @Column(name = "guarantee", length = 50)
     private String guarantee;//apply the guarantee type
 
-    public Customer(String citizenNumber, String firstName, String lastName) {
-        this.citizenNumber = citizenNumber;
+    public Customer(String firstName, String lastName,String citizenNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.citizenNumber = citizenNumber;
     }
 }
