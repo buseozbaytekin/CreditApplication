@@ -12,5 +12,5 @@ public interface CustomerService {
     List <CustomerViewDTO> getCustomer();
     CustomerViewDTO createCustomer(CustomerCreateDTO customerCreateDTO);
     CustomerViewDTO updateCustomer(Long id, CustomerUpdateDTO customerUpdateDTO);
-    CustomerViewDTO deleteCustomer(Long id);
+    void deleteCustomer(Long id);
 }

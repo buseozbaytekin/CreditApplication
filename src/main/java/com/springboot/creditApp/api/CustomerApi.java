@@ -29,6 +29,12 @@ public class CustomerApi {
     @PutMapping("{id}")
     public ResponseEntity<?> updateCustomer(@PathVariable("id") Long id, @RequestBody CustomerUpdateDTO customerUpdateDTO){
         final CustomerViewDTO customer = customerService.updateCustomer(id, customerUpdateDTO);
-        return ResponseEntity.ok(customer);
+        return ResponseEntity.ok(new GenericResponse("Customer updated!"));
+    }
+
+    @DeleteMapping({"id"})
+    public ResponseEntity<?> deleteCustomer(@PathVariable("id") Long id){
+        customerService.deleteCustomer(id);
+        return ResponseEntity.ok(new GenericResponse("Customer deleted!"));
     }
 }
